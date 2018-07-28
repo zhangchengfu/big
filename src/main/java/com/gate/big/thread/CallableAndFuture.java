@@ -1,5 +1,7 @@
 package com.gate.big.thread;
 
+import com.gate.big.job.Parent;
+
 import java.util.concurrent.*;
 
 /**
@@ -10,6 +12,7 @@ import java.util.concurrent.*;
 // 返回结果的任务
 public class CallableAndFuture {
     public static void main(String[] args) {
+        Parent p = new Parent();
         // 其一
         ExecutorService threadPool = Executors.newSingleThreadExecutor();
         Future<String> future = threadPool.submit(new Callable<String>() {
